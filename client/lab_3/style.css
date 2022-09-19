@@ -239,7 +239,8 @@ div.carousel {
     - now make sure that images are _always_ square
     - ... there's a reason crop tools are popular in image editors
    */
-  width: 150px; 
+   
+   width: 150px; 
 }
 
 .prev,
