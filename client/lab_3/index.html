@@ -24,15 +24,19 @@
 
       <div class = "right_section box">
         <h2>Image Carousel</h2>
-        <div class = "grid">
-          <img id = "pic1" src = 'images/bunny1.jpg' alt='An image of a cute bunny'/>
-          <img id = "pic2" src = 'images/bunny2.jpg' alt='An image of a cute bunny'/>
-          <img id = "pic3"src = 'images/bunny3.jpg' alt='An image of a cute bunny'/>
-          <img id = "pic4"src = 'images/bunny4.jpg' alt='An image of a cute bunny'/>
+        <div class="carousel">
+          <button class="prev">prev</button>
+          <div class = "slides">
+            <div class="carousel_item visible"><img id = "pic1" src = 'images/bunny1.jpg' alt='An image of a cute bunny'/></div>
+            <div class="carousel_item hidden"><img id = "pic2" src = 'images/bunny2.jpg' alt='An image of a cute bunny'/></div>
+            <div class="carousel_item hidden"><img id = "pic3" src="images/bunny3.jpg" alt='An image of a cute bunny'/></div>
+            <div class="carousel_item hidden"><img id = "pic4" src = 'images/bunny4.jpg' alt='An image of a cute bunny'/></div>
+          </div>
+          <button class="next">next</button>
         </div>
-
         <div>
-          <p class = "box">Four pictures of adorable bunnies to brighten up your day.
+          <p class = "box">
+            Four pictures of adorable bunnies to brighten up your day.
           </p>
         </div>
       </div>
