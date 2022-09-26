@@ -96,8 +96,8 @@ div {
   /* this will push other blocks out of the way */
 
   /* colors */
-  background-color: #ffe08a;
-  color: #4a4a4a;
+  background-color: #735d78;
+  color: #f7d1cd;
 
   /* shapes */
   border-radius: 6px;
@@ -107,7 +107,7 @@ div {
 
 
   /* box-shadows are fancy */
-  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+  box-shadow: 0 0.5em 1em -0.125em rgba(148, 126, 126, 0.1), 0 0 0 1px rgb(10 10 10 / 2%);
 }
 
 
@@ -121,7 +121,7 @@ div {
 */
 
 .box {
-  background-color: rgba(239, 239, 239, 0.40);
+  background-color: #f7d1cd;
   border: 2px dashed;
   border-radius: 4px;
 
@@ -131,14 +131,14 @@ div {
 }
 
 .left_section {
-  background-color: rgba(0, 139, 139, 0.8);
+  background-color: #d1b3c4;
   flex: 0 1 auto;
   margin: 1rem;
   padding: 1.5rem;
 }
 
 .right_section {
-  background-color: rgba(255, 224, 138, 0.7);
+  background-color: #b392ac;
   flex: 1 2 auto;
   margin: 1rem;
   align-items: center;
@@ -310,14 +310,14 @@ form input {
     /* Rules in here will only apply when a screen is the correct size */
     /* check it out by using your developer tools to shrink your screen-size */
     .container {
-      background-color: rgba(204, 8, 162, 0.65);
+      background-color: #b392ac;
       flex-direction: column;
       justify-content: center;
       align-items: center;
     }
     
     .right_section {
-      background-color: rgba(255, 224, 138, 0.7);
+      background-color: #e8c2ca;
       flex: 1 2 auto;
       margin: 1rem;
       align-items:flex-start;
