@@ -46,8 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let current = theTritrominoes[0][0];
 
   function draw() {
-    current.forEach(index => {squares[currentPosition + index].classList.add('tetrimino')
-    });
+    current.forEach(index => {
+      squares[currentPosition + index].classList.add('tetromino')
+    })
   }
 
   draw();
