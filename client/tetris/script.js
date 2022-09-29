@@ -154,12 +154,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
+  // calculates and displays the score
   function addScore() {
     for (let i = 0; i < 199; i += width) {
       const row = [i, i + 1, i + 2, i + 3, i + 4, i + 5, i + 6, i + 7, i + 8, i + 9];
       if (row.every(index => squares[index].classList.contains('taken'))) {
         score += 10;
-        scoreDisplay.textContent = score;
+        scoreDisplay.innerHTML = score;
         row.forEach(index => {
           squares[index].classList.remove('taken');
           squares[index].classList.remove('tetromino');
@@ -170,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
-  
+
   // stops the tetriminoes from falling off of the screen
   function freeze() {
     if (current.some(index => squares[currentPosition + index + width].classList.contains('taken'))) {
