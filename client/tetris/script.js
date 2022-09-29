@@ -85,13 +85,26 @@ document.addEventListener('DOMContentLoaded', () => {
     if (current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
       currentPosition += 1;
     }
+    draw();
+  }
 
+  function moveRight() {
+    undraw();
+    const isAtRightEdge = current.some(index => (currentPosition + index) % width === (width - 1));
+    if (!isAtRightEdge) currentPosition += 1;
+    if (current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
+      currentPosition -= 1;
+    }
     draw();
   }
 
   function control(key) {
     if (key.keyCode === 37) {
       moveLeft();
+    } else if (key.keyCode === 39) {
+      moveRight();
+    } else if (key.keyCode === 40) {
+      moveDown();
     }
   }
 
