@@ -172,6 +172,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function gameOver() {
+    if (current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
+      scoreDisplay.innerHTML = ' end';
+      clearInterval(timerId);
+    }
+  }
+
   // stops the tetriminoes from falling off of the screen
   function freeze() {
     if (current.some(index => squares[currentPosition + index + width].classList.contains('taken'))) {
@@ -183,6 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
       draw();
       displayShape();
       addScore();
+      gameOver();
     }
   }
 });
