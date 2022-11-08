@@ -85,11 +85,17 @@ function initMap() {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
+  return map;
 }
 
 function markerPlace(array, map) {
-  console.log(markerPlace, array);
-  const marker = L.marker([51.5, -0.09]).addTo(map);
+  console.log('markerPlace', array);
+  // const marker = L.marker([51.5, -0.09]).addTo(map);
+  array.forEach((item) => {
+    const {coordinates} = item.geocoded_column_1;
+    console.log(item);
+    L.marker([coordinates[1], coordinates[0]]).addTo(map);
+  });
 }
 
 async function mainEvent() {
