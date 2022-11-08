@@ -11,9 +11,9 @@
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 */
 function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is exclusive and the minimum is inclusive
+  const newMin = Math.ceil(min);
+  const newMax = Math.floor(max);
+  return Math.floor(Math.random() * (newMax - newMin + 1) + newMin); // The maximum is exclusive and the minimum is inclusive
 }
 
 function injectHTML(list) {
@@ -78,6 +78,20 @@ function filterList(array, filterInputValue) {
   });
 }
 
+function initMap() {
+  console.log('initMap');
+  const map = L.map('map').setView([38.9897, -76.9378], 13);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+}
+
+function markerPlace(array, map) {
+  console.log(markerPlace, array);
+  const marker = L.marker([51.5, -0.09]).addTo(map);
+}
+
 async function mainEvent() {
   /*
         ## Main Event
@@ -85,7 +99,7 @@ async function mainEvent() {
           When you're not working in a heavily-commented "learning" file, this also is more legible
           If you separate your work, when one piece is complete, you can save it and trust it
       */
-
+  const pageMap = initMap();
   // the async keyword means we can make API requests
   const form = document.querySelector('.main_form'); // get your main form so you can do JS with it
   const submit = document.querySelector('#get-resto'); // get a reference to your submit button
@@ -128,6 +142,7 @@ async function mainEvent() {
       console.log(event.target.value);
       const newArray = filterList(currentList, event.target.value);
       injectHTML(newArray);
+      markerPlace(currentList, pageMap);
     });
     // And here's an eventListener! It's listening for a "submit" button specifically being clicked
     // this is a synchronous event event, because we already did our async request above, and waited for it to resolve
@@ -140,6 +155,7 @@ async function mainEvent() {
 
       // And this function call will perform the "side effect" of injecting the HTML list for you
       injectHTML(currentList);
+      markerPlace(currentList, pageMap);
 
       // By separating the functions, we open the possibility of regenerating the list
       // without having to retrieve fresh data every time
